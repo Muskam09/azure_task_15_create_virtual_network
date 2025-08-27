@@ -14,7 +14,7 @@ Write-Host "Creating a resource group $resourceGroupName ..."
 New-AzResourceGroup -Name $resourceGroupName -Location $location
 
 Write-Host "Creating a virtual network ..."
-$webSubne = New-AzVirtualNetworkSubnetConfig -Name $webSubnetName -AddressPrefix $webSubnetIpRange
+$webSubnet = New-AzVirtualNetworkSubnetConfig -Name $webSubnetName -AddressPrefix $webSubnetIpRange
 $dbSubnet  = New-AzVirtualNetworkSubnetConfig -Name $dbSubnetName  -AddressPrefix $dbSubnetIpRange
 $mngSubnet  = New-AzVirtualNetworkSubnetConfig -Name $mngSubnetName  -AddressPrefix $mngSubnetIpRange
 
@@ -23,4 +23,4 @@ New-AzVirtualNetwork `
   -ResourceGroupName $resourceGroupName `
   -Location $location `
   -AddressPrefix $vnetAddressPrefix `
-  -Subnet $webSubne, $dbSubnet, $mngSubnet
+  -Subnet $webSubnet, $dbSubnet, $mngSubnet
